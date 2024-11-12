@@ -1,21 +1,30 @@
 import { Text, View, StyleSheet } from "react-native";
+import { Image } from "expo-image";
+
+const PlaceholderImage = require("@/assets/images/background-image.png");
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#25292e',
+    alignItems: 'center',
   },
-  text: {
-    color: "#fff",
-  }
+  imageContainer: {
+    flex: 1,
+  },
+   image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
+  },
 });
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hola mundo!</Text>
+      <View style={styles.imageContainer}>
+        <Image source={PlaceholderImage} style={styles.image} />
+      </View>
     </View>
   );
 }

@@ -13,7 +13,7 @@ export default function TabsLayout() {
         headerTintColor: "white",
         tabBarStyle: {
           backgroundColor: '#25292e',
-          borderTopWidth: 0,
+          borderTopWidth: 1,
         },
     }}
     >
@@ -22,10 +22,12 @@ export default function TabsLayout() {
         options={{
           headerTitle: "Principal",
           tabBarIcon: ({focused, color}) => <Ionicons name={focused ? "home-sharp" : "home-outline"} size={24} color={color} />,
+          title: "Principal"
         }}
       />
       <Tabs.Screen name="about" options={{ headerTitle: "Acerca de",
-        tabBarIcon: ({focused, color}) => <Ionicons name={focused ? "information-circle" : "information-circle-outline"} size={24} color={color} />
+        tabBarIcon: ({focused, color}) => <Ionicons name={focused ? "information-circle" : "information-circle-outline"} size={24} color={color} />,
+        title: "Acerca de"
        }} />
     </Tabs>
   );
