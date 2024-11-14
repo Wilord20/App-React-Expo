@@ -6,6 +6,8 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
+import { setStatusBarStyle } from "expo-status-bar";
+import { useEffect } from "react";
 
 type Props = {
   imageSize: number;
@@ -16,6 +18,12 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
   const scaleImage = useSharedValue(imageSize);
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStatusBarStyle("auto");
+    }, 0);
+  }, []);
 
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
